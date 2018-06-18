@@ -1,4 +1,5 @@
 package Human.Behaviours;
 
-public class SayHelloStrategy {
+public interface SayHelloStrategy {
+    public String introduceYourselfAsYouWant();
 }
