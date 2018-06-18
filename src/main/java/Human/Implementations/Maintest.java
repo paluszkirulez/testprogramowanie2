@@ -5,26 +5,13 @@ import Human.Behaviours.PrickHello;
 
 public class Maintest {
     public static void main(String[] args) {
-        Human bartek = new ManOfCulture.ManOfCultureBuilder()
-                .withName("Bartek")
-                .withAge(22)
-                .withSurName("Dawid")
-                .CreateHuman();
+        CulturalCensus culturalCensus = CulturalCensus.culturalCensus();
+        culturalCensus.addHumanToCultural("N,Bartek,Dawid,28;N,Maria,Kierach,30;P,Michal,Boniek;P,Bartek,Niedobry,55");
+        culturalCensus.getCensusList().stream().forEach(x-> System.out.println(x));
+        culturalCensus.getCensusList().stream().forEach(x-> System.out.println(x.getClass()));
+        System.out.println(culturalCensus.getCensusList().toString());
 
-        System.out.println(bartek.sayHello());
-        System.out.println(bartek.introduceYourself());
-        Human drwal = new Prick.PrickBuilder()
-                .withName("Bardzo")
-                .withSurName("Ponury")
-                .CreateHuman();
-
-        System.out.println(drwal.sayHello());
-        System.out.println(drwal.introduceYourself());
-
-        PuppetCreature puppetCreature = new PuppetCreature(new NiceHello());
-        System.out.println(puppetCreature.sayHello());
-        PuppetCreature puppetCreature2 = new PuppetCreature(new PrickHello());
-        System.out.println(puppetCreature2.sayHello());
+        System.out.println(culturalCensus.numberOfPeople("Weronika"));
 
     }
 }

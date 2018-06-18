@@ -12,4 +12,24 @@ public abstract class Human {
         return tempString;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSurName() {
+        return surName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "name='" + name + '\'' +
+                ", surName='" + surName + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
